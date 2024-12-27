@@ -8,3 +8,8 @@ class Solution:
             else:
                 return True
         return False
+
+
+#Time complexity = O(n) because we iterate over the list once and perform O(1) operations inside the loop. Hence O(1) * O(n) = O(n)
+
+#Space complexity = O(n) because for worse case, we store all n unique numbers in the dictionary
