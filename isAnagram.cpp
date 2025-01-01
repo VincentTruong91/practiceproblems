@@ -19,4 +19,4 @@ class isAnagram
         }
         return sMap == tMap; //return if the maps are the same (listing of chars)
     }
-}
+};
