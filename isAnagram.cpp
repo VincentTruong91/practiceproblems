@@ -1,22 +1,41 @@
-class isAnagram
-{
-    public:
-    bool isAnagram(string s, string t)
-    {
-        if s.length() == t.length()
-        {
-            return false; //theres no way that both strings are anagrams of each other if there are unequal in length
+// Hashmap
+//Time Complexity -> O(n) uses a for loop
+//Space Complexity -> O(n) uses an unordered_map (hashmap)
+
+using namespace std;
+
+class Solution {
+    bool isAnagram(string s, string t){
+        if (s.length() != t.length()){
+            return false;
         }
 
-        unordered_map<char, int> sMap;
-        unordered_map<char, int> tMap;
+        unordered_map<char, int> mapS;
+        unordered_map<char, int> mapT;
 
-        //because they are the same length, we can use either one of the strings to itterate over
-        for(int i = 0; i < s.length(); i++)
-        {
-            sMap[s[i]]++; //adds whatever char at s[i] into the unordered map
-            tMap[t[i]]++;
+        for(int i = 0; i < s.length(); i++){
+            mapS[s[i]]++;
+            mapT[t[i]]++;
         }
-        return sMap == tMap; //return if the maps are the same (listing of chars)
+
+        return mapS == mapT;
     }
-};
+}
+
+/////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////
+
+//Sorted way
+//Time Complexity -> O(nlogn) because we are using the sort algorithm
+//Space Complexity -> O(1)
+
+#include <algorithm>
+class Solution{
+    bool isAnagram(string s, string t){
+        if (s.length() != t.length()){
+            return false;
+        }
+
+        return sort(s.begin(), s.end()) == sort(t.begin(), t.end())
+    }
+}
