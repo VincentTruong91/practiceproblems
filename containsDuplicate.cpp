@@ -25,6 +25,7 @@ class Solution {
 //Space Comp. -> O(1) bc it doesn't initialize any arr, and only returns true/false
 #include <vector>
 class Solution {
+public:
     bool hasDuplicate(vector<int>& nums) {
         for(int i =0; i < nums.size(); i++){
             for(int j = i + 1; j < nums.size(); j++){
@@ -47,6 +48,7 @@ class Solution {
 #include <algorithm>
 
 class Solution {
+public:
     bool hasDuplicate(vector<int>& nums){
         std::sort(nums.begin(), nums.end());
         for(int i = 0; i < nums.size()-1; i++) {
