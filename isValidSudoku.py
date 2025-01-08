@@ -16,7 +16,7 @@ class Solution:
                     continue
                 if(board[r][c] in rows[r]
                 or board[r][c] in cols[c]
-                or board[r][c] in squares[r//3, column//3]):
+                or board[r][c] in squares[r//3, c//3]):
                     return False
 
                 cols[c].add(board[r][c])
