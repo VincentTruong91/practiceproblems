@@ -13,4 +13,4 @@ class Solution:
                 result[stackIndex] = (index - stackIndex)
             stack.append([temp, index])
         return result
-    
+        
