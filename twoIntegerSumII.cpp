@@ -37,5 +37,5 @@ class Solution{
             hashmap[numbers[i]] = i;
         }
     }
-}
+} 
 
