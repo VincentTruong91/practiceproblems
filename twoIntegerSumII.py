@@ -30,4 +30,4 @@ class Solution:
             if hashmap[temp]:
                 return [hashmap[temp], i + 1]
             hashmap[numbers[i]] = i + 1
-        return []
+        return [] 
