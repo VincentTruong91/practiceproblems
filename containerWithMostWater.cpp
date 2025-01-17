@@ -1,3 +1,6 @@
+// two pointer
+//time complexity -> O(n)
+//space complexity -> O(1)
 class Solution{
 public:
     int containerWithMostWater(vector<int>& heights){
