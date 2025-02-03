@@ -49,3 +49,31 @@ class TreeNode:
         return level
 
 
+####################################################
+####################################################
+#Itterative DFS (depth first search without recursion), we use pre-order traversal (root, left, right)
+#
+#
+
+class TreeNode:
+    def __init__(self,val=0,left=None,right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+    def maxDepth(self, root:Optional[TreeNode]):
+        stack = []
+        res = 0
+        if root != None:
+            stack.append([root, 1]) #node and level
+
+        while stack != None:
+            #we will use pre-order traversal (root, left ,right)
+            node, depth = stack.pop()
+
+            if node != None:
+                res = max(res, depth)
+                stack.append([node.left, depth + 1]) #if node is null it will ignore this line
+                stack.append([node.left, depth + 1]) #if node is null it will also ignore this line
+
+        return res
