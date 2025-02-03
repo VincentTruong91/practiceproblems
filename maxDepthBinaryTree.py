@@ -7,7 +7,7 @@ class TreeNode:
         self.left = left
         self.right = right
 
-    def maxDepth(self, root: Optional[TreeNode]):
+    def maxDepth(self, root: Optional[TreeNode]) -> int:
         #Recursive DFS
         #base case
         if root == None: #empty tree
@@ -16,3 +16,36 @@ class TreeNode:
         #else there is a tree
         #recursive case
         return 1 + max(self.maxDepth(root.left), self.maxDepth(root.right))
+
+
+#########################################################
+#########################################################
+#BFS (Breadth First Search)
+# Time Complexity -> O(n)
+# Space Complexity -> O(n)
+
+class TreeNode:
+    def __init__(self, val=0,left=None,right=None) -> int:
+        self.val = val
+        self.left = left
+        self.right = right
+
+    def maxDepth(self, root=Optional[TreeNode]):
+        q = deque()
+        level = 0
+        
+        if root != None:
+            q.append(root)
+
+        while q != None:
+            for i in range(len(q)): #go through all children in the same level
+                node = q.popleft()
+                if node.left != None:
+                    q.append(node.left)
+                if node.right != None:
+                    q.append(node.right)
+            level += 1
+
+        return level
+
+
