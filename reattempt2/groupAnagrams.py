@@ -7,6 +7,6 @@ class Solution:
 
             for character in string:
                 count[ord(character) - ord('a')]
-            res[tuple(count)].append(s)
+            res[tuple(count)].append(string)
 
         return list(res.values())
