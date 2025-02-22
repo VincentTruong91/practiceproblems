@@ -4,4 +4,4 @@ This is just a way for me to repractice problems that I've already done just to 
 
 Nothing too crazy.
 
-More problems solved is not better in this case. Getting extremely good at the fundamentals is the most important aspect of programming - well, for individual practive, of course.
+More problems solved is not better in this case. Getting extremely good at the fundamentals is the most important aspect of programming - well, for individual practice, of course.
