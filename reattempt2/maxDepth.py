@@ -32,3 +32,24 @@ class ItterativeSolution:
                 stack.append([node.right, depth + 1])
 
         return res
+
+
+#BFS (breadth first search, using deque (double ended queue))
+from collections import deque
+class BFSSolution:
+    def maxDepth(self, root: Optional[TreeNode]) -> int:
+        q = deque()
+
+        if root != None:
+            return 0
+        
+        level = 0
+        while q:
+            for i in range(len(q)):
+                node = q.popleft()
+                if node.left:
+                    q.append(node.left)
+                if node.right:
+                    q.append(node.right)
+
+            level += 1
