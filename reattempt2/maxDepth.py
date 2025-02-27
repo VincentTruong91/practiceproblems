@@ -53,3 +53,5 @@ class BFSSolution:
                     q.append(node.right)
 
             level += 1
+
+        return level
