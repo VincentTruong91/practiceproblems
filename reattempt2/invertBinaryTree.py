@@ -8,7 +8,7 @@ class TreeNode:
         self.right = right
 
 
-class Solution:
+class DFSRecursiveSolution:
     def invertTree(self, root: Optional[TreeNode]) -> Optonal[TreeNode]:
         #recursion
 
@@ -28,3 +28,47 @@ class Solution:
         self.invertTree(root.left)
         self.invertTree(root.right)
 
+
+from collections import deque
+
+class BFSSolution:
+    def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
+        if root == None:
+            return None
+        q = deque([root])
+
+        while queue != None:
+            node = q.popleft()
+            node.left, node.right = node.right, node.left
+            if node.left != None:
+                deque.append(node.left)
+
+            if node.right != None:
+                deque.append(node.right)
+        return root
+    
+#time complexity -> O(n)
+#space complexity -> O(n)
+
+
+
+#Itterative DFS Solution
+class DFSItterativeSolution:
+    def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
+        if root == None:
+            return None
+        stack = [root]
+
+        while stack != None:
+            node = stack.pop()
+            node.left, node.right = node.right, node.left
+
+            if node.left != None:
+                stack.append(node.left)
+            if node.right != None:
+                stack.append(node.right)
+
+        return root
+    
+#time complexity -> O(n) due to using while loop and apply same work to all nodes in tree
+#space complexity -> O(n) due to using stack to store all nodes from tree
