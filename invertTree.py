@@ -7,6 +7,7 @@ class TreeNode:
         self.left = left
         self.right = right
 
+class RecursiveDFSSolution:
     def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
 
         #base case:
@@ -23,3 +24,28 @@ class TreeNode:
 
         return root
 
+
+#uses stack for dfs itteration
+#for every level of the tree, pop the element(s)
+#from previous level to get children(s) (if any)
+#from the current level
+#time complexity -> O(n) due to itterating through all nodes in tree via while loop
+#space complexity -> O(n) due to using stack to apply equal work to all nodes in tree
+class ItterativeDFS:
+    def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
+        if root == None:
+            return None
+        
+        stack = [root]
+
+        while stack != None:
+            node = stack.pop()
+
+            node.left, node.right = node.right, node.left
+            if node.left != None:
+                stack.append(node.left)
+            if node.right != None:
+                stack.append(node.right)
+
+            
+        return root
