@@ -14,11 +14,12 @@ class Solution:
             return True
 
 
-        if (p != None and q != None) and (p.val == q.val){
+        if (p != None and q != None) and (p.val == q.val):
             return self.sameTree(p.left, p.right) and self.sameTree(q.left, q.right)
-        }
-        else: #first condition when false means that either p or q node doesn't exist when the other one does. second condition is checking if both tree nodes p and q have the same value, and if not, return False
-            return False
+        
+
+        #first condition when false means that either p or q node doesn't exist when the other one does. second condition is checking if both tree nodes p and q have the same value, and if not, return False
+        return False
         
 
 
