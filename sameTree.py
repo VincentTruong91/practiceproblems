@@ -31,7 +31,7 @@ class TreeNode:
         self.right = right
 
 
-from collections import Optional
+from typing import Optional
 
 class ItterativeDFSSolution:
     def sameTree(self, p: Optional[TreeNode], q:Optional[TreeNode]) -> bool:
@@ -51,5 +51,42 @@ class ItterativeDFSSolution:
             stack.append((nodeP.left, nodeP.right))
             stack.append((nodeQ.left, nodeQ.right))
 
+
+        return True
+    
+
+
+#Itterative BFS solution
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+
+from typing import Optional
+from collections import deque
+
+class ItterativeBFSSolution:
+    def sameTree(self, p:Optional[TreeNode], q:Optional[TreeNode]) -> bool:
+        queueP = deque([p])
+        queueQ = deque([q])
+
+        while queueP and queueQ:
+            for _ in range(len(queueP)):
+                nodeP, nodeQ = queueP.popleft(), queueQ.popleft()
+
+                if nodeP == None and nodeQ == None:
+                    return True
+                
+                if nodeP == None or nodeQ == None or nodeP.val != nodeQ.val:
+                    return False
+            
+                queueP.append(nodeP.left)
+                queueP.append(nodeP.right)
+
+                queueQ.append(nodeQ.left)
+                queueQ.append(nodeQ.right)
+            
 
         return True
