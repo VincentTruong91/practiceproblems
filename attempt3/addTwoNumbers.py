@@ -12,7 +12,7 @@ class ListNode:
 #answer: 2174, no need to worry about reversing list
 
 class Solution:
-    def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
+    def addTwoNumbers(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
         dummy = ListNode(0, None)
         curr = dummy
         #or I can do dummy = ListNode()
